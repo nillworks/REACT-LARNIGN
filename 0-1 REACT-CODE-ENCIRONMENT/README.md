@@ -1,0 +1,3 @@
+- [x] setups react projects .
+- [x] How to crate component and use learn today .
+- [x] Task Completes.
