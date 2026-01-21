@@ -6,4 +6,8 @@
 
 <!-- Think React Component Data Flow images Screenshot -->
 
-   <img src="" alt="images Sreenshot" />
+<h2>Component Hauraki Images</h2>
+<img src="./preview/Component-Hairarki.png" width="800" />
+
+<h2>Component Stackers Images</h2>
+<img src="./preview/Component_stackser.png" width="800" />
