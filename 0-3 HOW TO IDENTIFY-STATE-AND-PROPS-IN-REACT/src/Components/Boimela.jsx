@@ -1,6 +1,7 @@
 import BookList from './BookList';
 import Header from './Header';
 import Search from './Search';
+import { useState } from 'react';
 
 const BOOk = [
   {
@@ -34,11 +35,13 @@ const BOOk = [
 ];
 
 const Boimela = () => {
+  const [searchTram, setSearchTram] = useState('');
+
   return (
     <div className="px-2 py-2">
       <Header />
-      <Search />
-      <BookList books={BOOk} />
+      <Search searchTram={searchTram} onSearchTram={setSearchTram} />
+      <BookList books={BOOk} searchTram={searchTram} />
     </div>
   );
 };
