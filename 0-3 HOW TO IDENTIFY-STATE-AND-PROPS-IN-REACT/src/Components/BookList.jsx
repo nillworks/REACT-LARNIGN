@@ -1,12 +1,21 @@
 import BookRow from './BookRow';
 import PropTypes from 'prop-types';
 
-const BookList = ({ books, searchTram }) => {
+const BookList = ({ books, searchTram, onfutureBook }) => {
   const row = [];
   books.forEach(book => {
     if (book.title.toLowerCase().indexOf(searchTram.toLowerCase()) === -1)
       return;
-    row.push(<BookRow key={book.id} title={book.title} author={book.author} />);
+    row.push(
+      <BookRow
+        key={book.id}
+        title={book.title}
+        author={book.author}
+        isFeatured={book.isFeatured}
+        onfutureBook={onfutureBook}
+        id={book.id}
+      />,
+    );
   });
   return <div className="space-y-4 mt-5">{row}</div>;
 };

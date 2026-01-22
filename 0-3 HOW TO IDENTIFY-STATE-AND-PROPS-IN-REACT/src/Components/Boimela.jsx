@@ -1,3 +1,4 @@
+import { Book } from 'lucide-react';
 import BookList from './BookList';
 import Header from './Header';
 import Search from './Search';
@@ -35,13 +36,26 @@ const BOOk = [
 ];
 
 const Boimela = () => {
+  const [featureBooks, setFeature] = useState(BOOk);
   const [searchTram, setSearchTram] = useState('');
+
+  const toggleFeatured = id => {
+    setFeature(
+      featureBooks.map(book =>
+        book.id === id ? { ...book, isFeatured: !book.isFeatured } : book,
+      ),
+    );
+  };
 
   return (
     <div className="px-2 py-2">
       <Header />
       <Search searchTram={searchTram} onSearchTram={setSearchTram} />
-      <BookList books={BOOk} searchTram={searchTram} />
+      <BookList
+        books={featureBooks}
+        searchTram={searchTram}
+        onfutureBook={toggleFeatured}
+      />
     </div>
   );
 };
