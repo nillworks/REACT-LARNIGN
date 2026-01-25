@@ -51,7 +51,7 @@ const CarsShop = () => {
     <div>
       <Header />
       <Search />
-      <CarsList />
+      <CarsList cars={CARS} />
     </div>
   );
 };

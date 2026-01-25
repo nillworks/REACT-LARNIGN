@@ -1,9 +1,9 @@
 import CarsDetails from './CarsDetails';
 
-const CarsRow = () => {
+const CarsRow = ({ cars }) => {
   return (
     <div>
-      <CarsDetails />
+      <CarsDetails cars={cars} />
     </div>
   );
 };
