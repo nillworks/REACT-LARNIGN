@@ -6,7 +6,14 @@ const CarsList = ({ cars }) => {
   cars.forEach(car => {
     row.push(<CarsRow key={car.id} cars={car} />);
   });
-  return <div>{row}</div>;
+  return (
+    <div
+      className="flex flex-col gap-4 sm:grid sm:grid-cols-2 
+    lg:grid-cols-3 2xl:grid-cols-4"
+    >
+      {row}
+    </div>
+  );
 };
 
 CarsList.propTypes = {

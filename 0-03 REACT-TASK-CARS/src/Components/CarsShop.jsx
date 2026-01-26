@@ -48,7 +48,7 @@ const CARS = [
 
 const CarsShop = () => {
   return (
-    <div>
+    <div className="px-3 flex flex-col gap-4 container mx-auto">
       <Header />
       <Search />
       <CarsList cars={CARS} />
