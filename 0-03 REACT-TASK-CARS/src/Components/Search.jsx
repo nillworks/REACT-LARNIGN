@@ -1,6 +1,6 @@
 import ShowPremium from './ShowPremium';
 
-const Search = ({ searchTram, setSearchTram }) => {
+const Search = ({ searchTram, setSearchTram, showPremium, onShowPremium }) => {
   return (
     <div className="flex flex-wrap items-center  gap-3 sm:flex-row">
       <form action="#">
@@ -13,7 +13,7 @@ const Search = ({ searchTram, setSearchTram }) => {
         />
       </form>
 
-      <ShowPremium />
+      <ShowPremium showPremium={showPremium} onShowPremium={onShowPremium} />
     </div>
   );
 };

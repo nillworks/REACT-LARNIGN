@@ -48,14 +48,22 @@ const CARS = [
 ];
 
 const CarsShop = () => {
+  const [Cars, setShowPremium] = useState(false);
+
+  const filterCars = Cars ? CARS.filter(car => car.isPremium) : CARS;
+
   const [searchTram, setSearchTram] = useState('');
-  console.log(searchTram);
 
   return (
     <div className="px-3 flex flex-col gap-4 container mx-auto">
       <Header />
-      <Search searchTram={searchTram} setSearchTram={setSearchTram} />
-      <CarsList cars={CARS} searchTram={searchTram} />
+      <Search
+        searchTram={searchTram}
+        setSearchTram={setSearchTram}
+        showPremium={Cars}
+        onShowPremium={setShowPremium}
+      />
+      <CarsList cars={filterCars} searchTram={searchTram} />
     </div>
   );
 };
