@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import CarsList from './CarsList';
 import Header from './header';
 import Search from './Search';
@@ -47,11 +48,14 @@ const CARS = [
 ];
 
 const CarsShop = () => {
+  const [searchTram, setSearchTram] = useState('');
+  console.log(searchTram);
+
   return (
     <div className="px-3 flex flex-col gap-4 container mx-auto">
       <Header />
-      <Search />
-      <CarsList cars={CARS} />
+      <Search searchTram={searchTram} setSearchTram={setSearchTram} />
+      <CarsList cars={CARS} searchTram={searchTram} />
     </div>
   );
 };

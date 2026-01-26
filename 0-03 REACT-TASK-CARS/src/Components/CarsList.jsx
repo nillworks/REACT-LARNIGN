@@ -1,9 +1,11 @@
 import PropTypes from 'prop-types';
 import CarsRow from './CarsRow';
 
-const CarsList = ({ cars }) => {
+const CarsList = ({ cars, searchTram }) => {
   const row = [];
   cars.forEach(car => {
+    if (car.title.toLowerCase().indexOf(searchTram.toLowerCase()) === -1)
+      return;
     row.push(<CarsRow key={car.id} cars={car} />);
   });
   return (
