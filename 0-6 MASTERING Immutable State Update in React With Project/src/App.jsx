@@ -1,9 +1,9 @@
-import UserList from './Immutability/UserList';
+import User from './Immutability/User';
 
 const App = () => {
   return (
     <div>
-      <UserList />
+      <User />
     </div>
   );
 };
