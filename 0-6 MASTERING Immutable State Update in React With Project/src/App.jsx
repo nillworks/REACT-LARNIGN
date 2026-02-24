@@ -1,9 +1,9 @@
-import User from './Immutability/User';
+import MovieWatch from './MovieWatch/MovieWatch';
 
 const App = () => {
   return (
-    <div>
-      <User />
+    <div className="px-3">
+      <MovieWatch />
     </div>
   );
 };
