@@ -1,39 +1,50 @@
-// import { useState } from 'react';
+import { useState } from 'react';
 
-/*
+const MovieFrom = ({ addMovie }) => {
+  // change State Crete
+  const [movieData, setMovieData] = useState({ title: '', ott: '' });
 
-const MovieFrom = () => {
-  const [movieData, setMovieData] = useState([{ title: '', ott: '' }]);
-
+  // Render State SetMovie Data
   const handleChange = e => {
-    const key = e.target.name;
     const value = e.target.value;
+    const key = e.target.name;
 
     setMovieData({ ...movieData, [key]: value });
   };
 
+  // Submit Not Render
   const handleSubmit = e => {
     e.preventDefault();
+
+    if (!movieData?.title.trim() || !movieData?.ott.trim()) return;
+    addMovie(movieData);
+
+    setMovieData({ ...movieData, title: '', ott: '' });
     console.log(movieData);
   };
 
   return (
-    <div className="flex flex-col gap-4 items-center justify-center space-y-4 py-8 sm:flex-row">
-      <form onSubmit={handleSubmit} action="">
+    <div>
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col gap-4 items-center justify-center sm:flex-row"
+      >
+        {/* Input Field */}
         <input
-          type="text"
-          placeholder="Enter Movie Name..."
-          name="title"
           onChange={handleChange}
           value={movieData?.title}
-          className="flex-1 p-2 border outline-none border-gray-700 bg-gray-800 rounded-lg text-white"
+          type="text"
+          name="title"
+          placeholder="Search"
+          className="outline-none border px-3 py-2 rounded-lg border-gray-300"
         />
 
+        {/* Select Fields */}
         <select
-          onChange={handleChange}
-          className="text-white outline-none border px-6 py-4 rounded-lg border-gray-200"
-          name="ott"
           value={movieData?.ott}
+          onChange={handleChange}
+          name="ott"
+          className="border border-gray-300 px-3 py-2 rounded-lg"
         >
           <option className="text-black" value="">
             Select an OTT
@@ -58,17 +69,20 @@ const MovieFrom = () => {
           </option>
         </select>
 
+        {/* Submit Button */}
         <button
           type="submit"
-          className="px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white rounded-sm"
+          className="bg-blue-500 text-white
+           px-8 py-2 rounded-lg transition duration-300
+          hover:bg-blue-700 cursor-pointer"
         >
           Add
         </button>
+
+        {/*  */}
       </form>
     </div>
   );
 };
 
 export default MovieFrom;
-
-*/
